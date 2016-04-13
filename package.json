@@ -1,0 +1,57 @@
+{
+  "name": "smart-bind",
+  "version": "0.1.0",
+  "description": "Smarter binding of function with some context. It uses .apply instead of .bind, with reason.",
+  "repository": "tunnckoCore/smart-bind",
+  "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
+  "precommit.silent": true,
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "dependencies": {
+    "is-bound-function": "^0.1.1",
+    "isobject": "^2.0.0"
+  },
+  "devDependencies": {
+    "assertit": "^0.1.0",
+    "pre-commit": "*"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "app",
+    "apply",
+    "bind",
+    "bound",
+    "context",
+    "ctx",
+    "fn",
+    "function",
+    "smart",
+    "smart-bind",
+    "util",
+    "utility",
+    "utils"
+  ],
+  "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "empty",
+    "tasks": [
+      "readme"
+    ],
+    "related": {
+      "list": [
+        "is-bound-function",
+        "bind-context",
+        "relike"
+      ]
+    },
+    "lint": {
+      "reflinks": true
+    }
+  }
+}
