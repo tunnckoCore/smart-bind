@@ -1,6 +1,6 @@
 {
   "name": "smart-bind",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Smarter binding of function with some context. It uses .apply instead of .bind, with reason.",
   "repository": "tunnckoCore/smart-bind",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
