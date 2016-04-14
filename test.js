@@ -22,7 +22,6 @@ test('should throw TypeError if `fn` not a function', function (done) {
   }
 
   test.throws(fixture, TypeError)
-  test.throws(fixture, /expect `fn` be function/)
   done()
 })
 
@@ -46,17 +45,6 @@ test('should get `native code` when passed function already bound with native .b
 
   test.strictEqual(bound(), 'fez')
   test.strictEqual(isBound(bound), true)
-  done()
-})
-
-test('should respect latest context when nested smart binds', function (done) {
-  var boundOne = smartBind({foo: 'one'}, zoopark)
-  var boundTwo = smartBind({foo: 'two'}, boundOne)
-  var boundZzz = smartBind({foo: 'zzz'}, boundTwo)
-
-  test.strictEqual(boundOne(), 'one')
-  test.strictEqual(boundTwo(), 'two')
-  test.strictEqual(boundZzz(), 'zzz')
   done()
 })
 

@@ -9,6 +9,8 @@
 
 var isObject = require('isobject')
 var isBound = require('is-bound-function')
+var rename = require('rename-function')
+var getName = require('get-fn-name')
 
 /**
  * > Smart bind `ctx` to `fn` instead use of native `.bind`
@@ -34,13 +36,5 @@ var isBound = require('is-bound-function')
 
 module.exports = function smartBind (ctx, fn) {
   fn = typeof ctx === 'function' ? ctx : fn
-  ctx = isObject(ctx) ? ctx : this
-
-  if (typeof fn !== 'function') {
-    throw new TypeError('smart-bind: expect `fn` be function')
-  }
-
-  return isBound(fn) ? fn : function bounded () {
-    return fn.apply(this || ctx, arguments)
-  }
+  return isBound(fn) ? fn : rename(fn, getName(fn), isObject(ctx) ? ctx : this)
 }
