@@ -7,10 +7,7 @@
 
 'use strict'
 
-var isObject = require('isobject')
-var isBound = require('is-bound-function')
-var rename = require('rename-function')
-var getName = require('get-fn-name')
+var utils = require('./utils')
 
 /**
  * > Smart bind `ctx` to `fn` instead use of native `.bind`
@@ -36,5 +33,6 @@ var getName = require('get-fn-name')
 
 module.exports = function smartBind (ctx, fn) {
   fn = typeof ctx === 'function' ? ctx : fn
-  return isBound(fn) ? fn : rename(fn, getName(fn), isObject(ctx) ? ctx : this)
+  ctx = typeof ctx === 'function' ? null : ctx
+  return utils.isBound(fn) ? fn : utils.rename(fn, utils.getName(fn), ctx || this)
 }
