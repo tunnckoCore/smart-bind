@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "get-fn-name": "^1.0.0",
-    "is-bound-function": "^0.1.1",
+    "is-bound-function": "^1.0.1",
     "lazy-cache": "^2.0.0",
     "rename-function": "^1.0.4"
   },
